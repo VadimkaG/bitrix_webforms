@@ -1,8 +1,8 @@
-document.addEventListener('DOMContentLoaded', function() {
+BX.ready(()=>{
 	var forms = document.querySelectorAll("form[webshop-webform-ajax]");
 	if (forms && forms.length > 0 && webshopWebFormAjaxOnce !== true)
 	forms.forEach(item=>{
-		item.addEventListener("submit",e=>{
+		BX.Event.bindOnce(item,"submit",e=>{
 			e.preventDefault();
 			var props = {};
 			for (let element of e.target.elements) {
